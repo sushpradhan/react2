@@ -4,7 +4,7 @@ const verifyToken = require('./verifyToken');
 
 function authenticate(req, res, next) {
   console.log('HERE');
-  const username = req.body.username;
+  const username = req.body.userName;
   const password = req.body.password;
 
   if(!users[username]) { res.status(403).json({message: 'Unauthorized'}); return; }

@@ -38,7 +38,7 @@ export default function Dashboard() {
     let newsToBeReadLater = news.find((newsCard:any )=> newsCard.source.id === id);
     console.log('news');
     console.log(newsToBeReadLater);
-    fetch('http://localhost:4000/newsList',{
+    fetch('http://localhost:3001/profile',{
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body:JSON.stringify(newsToBeReadLater)

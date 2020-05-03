@@ -1,11 +1,11 @@
 import React, { Component, useState } from 'react'
 
-
+import User from "../../model/user";
 
 import { FormControl, TextField, Button } from '@material-ui/core'
 
 
-
+import LoginService from '../../services/auth.service'
 
 
 const Login = (props: any) => {
@@ -21,7 +21,7 @@ const Login = (props: any) => {
         event.preventDefault();
         const name = event.target.name;
         const value = event.target.value;
-        if (name == 'uName') {
+        if (name === 'uName') {
             setUserName(value)
         }
         else {
@@ -33,23 +33,29 @@ const Login = (props: any) => {
     const handleOnClick = () => {
 
         if (userName.length < 3) {
-            setrErrName("Username needs min 6 char")
+            setrErrName("Username needs min 4 char")
         }
         else if (password.length < 3) {
             setrErrPass("Passwoed needs min 4 char")
         }
         else {
-            
-            if (userName == "admin" && password == "password") {
-                alert('Sucess');
-                let { history } = props;
-                history.push({
-                    pathname: '/Dashboard'
-                }
+            const user = new User(userName, password)
+            // if (userName == "admin" && password == "admin") {
+            //     alert('Sucess');
+            //     let { history } = props;
+            //     history.push({
+            //         pathname: '/dashboard'
+            //     }
 
-                )
-            }
-          
+            //     )
+            // }
+            console.log(user);
+            const auth = LoginService(user);
+            auth.then((data)=>{
+                
+                console.log(data)
+                props.updateToken(data.token);
+            })
 
         }
 
@@ -59,7 +65,7 @@ const Login = (props: any) => {
 
     return (
         <div>
-            <h4>Login</h4>
+            <h2>Login</h2>
             <FormControl>
                 <TextField name="uName" type="text" placeholder="User Name" value={userName}
                     onChange={handleOnChange} required error helperText={errName}></TextField>
