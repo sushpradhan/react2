@@ -2,8 +2,9 @@ import React, { Component, useState } from 'react'
 
 import User from "../../model/user";
 
-import { FormControl, TextField, Button } from '@material-ui/core'
-
+import { FormControl, TextField, Button} from '@material-ui/core'
+// import  Register  from "./Components/register/Register";
+import {Link} from 'react-router-dom'
 
 import LoginService from '../../services/auth.service'
 
@@ -13,8 +14,10 @@ const Login = (props: any) => {
 
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+   
     const [errName, setrErrName] = useState('');
     const [errPass, setrErrPass] = useState('');
+   
 
 
     const handleOnChange = (event: any) => {
@@ -74,6 +77,7 @@ const Login = (props: any) => {
                     onChange={handleOnChange} required error helperText={errPass} ></TextField>
                 <br></br>
                 <Button color="primary" onClick={handleOnClick}> Login</Button>
+                <Link to="/Register"> Not Registered? Click here</Link>
             </FormControl>
 
         </div>

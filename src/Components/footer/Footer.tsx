@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         height: 20,
         padding: 20,
         bottom: 30,
-        marginTop: 10,
+        marginTop: 450,
         width: "100%",
         background: "blue"
     }

@@ -4,6 +4,7 @@ import Header from "./Components/header/Header";
 import Footer from './Components/footer/Footer';
 
 import Dashboard from './Components/dashboard/Dashboard';
+import Register from "./Components/register/Register";
 
 import Login from "./Components/login/Login";
 
@@ -35,8 +36,9 @@ function App() {
           <Dashboard></Dashboard> */}
          <Route exact path="/" component={() => (token) ? <Redirect to='/Dashboard'></Redirect> : <Login updateToken={updateToken}></Login>}></Route>
         <Route exact path='/Dashboard' component={() => (token) ? <Dashboard /> : <Redirect to='/' />}></Route>
-
-       
+        <Route exact path='/ReadNow' component={() => (token) ? <Dashboard /> : <Redirect to='/' />}></Route>
+        <Route exact path='/Register' component={Register}/>
+          <Route exact path='/Login' component={Login}/>
       </Router >
 
       <Footer></Footer>
@@ -48,4 +50,19 @@ function App() {
 
 export default App;
 
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+          
        
+     

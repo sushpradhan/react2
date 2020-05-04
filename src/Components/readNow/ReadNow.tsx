@@ -18,13 +18,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Dashboard() {
+export default function ReadNow() {
   const classes = useStyles();
   const [state, setstate] = useState({ news: [] });
 
   //fetching data from newsapi.org
+
   useEffect(()=>{
-    fetch('http://newsapi.org/v2/top-headlines?country=in&apiKey=08c07e0f13274b2eb61a0abd47357678')
+    let authToken = localStorage.getItem('token');
+    fetch('http://localhost:3001/api/v1/news',{
+        method : 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization' : 'Bearer '+ authToken
+        }
+    })
     .then(res => res.json())
     .then(data => setstate({ news: data.articles }));
   },[]);
