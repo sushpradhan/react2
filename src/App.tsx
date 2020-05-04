@@ -1,68 +1,33 @@
 import React, { useState } from 'react';
 import './App.css';
-import Header from "./Components/header/Header";
-import Footer from './Components/footer/Footer';
-
+import Header from './Components/header/Header';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import Login from './Components/login/Login';
+import Register from './Components/register/Register';
 import Dashboard from './Components/dashboard/Dashboard';
-import Register from "./Components/register/Register";
-
-import Login from "./Components/login/Login";
-
-
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-
-
-
+// import About from './Components/about/About'
+import ReadNow from './Components/readNow/ReadNow';
+// Add the components here
 function App() {
   const [token, setToken] = useState();
-
   // To get a Token
   const updateToken = (token: string) => {
     localStorage.setItem('token', token)
     setToken(token);
   }
-
-
   return (
-    <div className="App">
-      <Header></Header>
-      <Router>
-        {/* <Login></Login>
-        <DashBoard></DashBoard> */}
-         {/*
-         
-          <Route exact path = '/' component = {Login} />
-          <Route exact path = '/dashboard' component = {Dashboard} />
-          <Dashboard></Dashboard> */}
-         <Route exact path="/" component={() => (token) ? <Redirect to='/Dashboard'></Redirect> : <Login updateToken={updateToken}></Login>}></Route>
-        <Route exact path='/Dashboard' component={() => (token) ? <Dashboard /> : <Redirect to='/' />}></Route>
-        <Route exact path='/ReadNow' component={() => (token) ? <Dashboard /> : <Redirect to='/' />}></Route>
-        <Route exact path='/Register' component={Register}/>
-          <Route exact path='/Login' component={Login}/>
-      </Router >
-
-      <Footer></Footer>
-
-    </div >
+    <Router>
+      <div>
+        <Header />
+        {/* <Switch> */}
+          <Route exact path="/" component={() => (token) ? <Dashboard /> : <Login updateToken={updateToken}></Login>} />
+          <Route exact path="/ReadNow" component={() => (token) ? <ReadNow /> : <Login updateToken={updateToken}></Login>} />
+          <Route exact path="/Register" component={Register} />
+          <Route exact path="/Login" component={Login} />
+          {/* <Route exact path="/About" component={About} /> */}
+        {/* </Switch> */}
+      </div>
+    </Router>
   );
-
 }
-
 export default App;
-
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-          
-       
-     

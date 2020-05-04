@@ -1,5 +1,32 @@
 {
   "news": [
-   
+    {
+      "source": {
+        "id": "the-times-of-india",
+        "name": "The Times of India"
+      },
+      "author": "Times Of India",
+      "title": "Never talked about charging migrant workers; 85% fare borne by railways, 15% by state governments: Centre - Times of India",
+      "description": "India News: The govt has not talked about charging anything from migrant labourers as 85% of the transportation cost is borne by the railways and 15% by state gov",
+      "url": "https://timesofindia.indiatimes.com/india/never-talked-about-charging-migrant-workers-85-fare-borne-by-railways-15-by-state-governments-centre/articleshow/75535124.cms",
+      "urlToImage": "https://static.toiimg.com/thumb/msid-75535464,width-1070,height-580,imgsize-228633,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
+      "publishedAt": "2020-05-04T14:19:35Z",
+      "content": "Never talked about charging migrant workers; 85% fare borne by railways, 15% by state governments: Centre\r\n<ul><li>News</li>\r\n<li>India News</li>\r\n<li>Never talked about charging migrant workers; 85% fare borne by railways, 15% by state governments: Centre</l… [+6 chars]",
+      "id": 1
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Youtube.com"
+      },
+      "author": null,
+      "title": "2020 13-Inch MacBook Pro: Everything New! - AppleInsider",
+      "description": "The new 13-inch MacBook Pro got quite the update in mid-2020 with several improvements from processors, to RAM, to graphics, and more. Check it all out in th...",
+      "url": "https://www.youtube.com/watch?v=6CN9yswvpDg",
+      "urlToImage": "https://i.ytimg.com/vi/6CN9yswvpDg/maxresdefault.jpg",
+      "publishedAt": "2020-05-04T13:53:54Z",
+      "content": null,
+      "id": 2
+    }
   ]
 }
