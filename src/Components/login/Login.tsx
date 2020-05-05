@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 
 import User from "../../model/user";
 
@@ -67,7 +67,7 @@ const Login = (props: any) => {
     }
 
     return (
-        <div>
+        <div >
             <h2>Login</h2>
             <FormControl>
                 <TextField name="uName" type="text" placeholder="User Name" value={userName}
@@ -76,7 +76,7 @@ const Login = (props: any) => {
                 <TextField name="uPass" type="password" placeholder="Password" value={password}
                     onChange={handleOnChange} required error helperText={errPass} ></TextField>
                 <br></br>
-                <Button color="primary" onClick={handleOnClick}> Login</Button>
+                <Button id="login" color="primary" onClick={handleOnClick}> Login</Button>
                 <Link to="/Register"> Not Registered? Click here</Link>
             </FormControl>
 

@@ -30,7 +30,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "node server/bin/www"
+    "serve": "node server/bin/www",
+    "cypress": "cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"

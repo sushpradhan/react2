@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 
 import User from "../../model/user";
 
@@ -46,7 +46,7 @@ const Register = (props: any) => {
         else if (password.length < 3) {
             setrErrPass("Passwoed needs min 4 char")
         }
-        else if(firstName.length==0){
+        else if(firstName.length===0){
             setErrFname("First Name cannot be empty")
         }
         else if(email.length<10){
@@ -92,16 +92,16 @@ const Register = (props: any) => {
                     onChange={handleOnChange} required error helperText={errPass} ></TextField>
                 <br></br>
                 <TextField name="fName" type="text" placeholder="First Name" value={firstName}
-                    onChange={handleOnChange} required error helperText={errName}></TextField>
+                    onChange={handleOnChange} required error helperText={errFname}></TextField>
                 <br></br>
                 <TextField name="lName" type="text" placeholder="Last Name" value={lastName}
-                    onChange={handleOnChange} required error helperText={errName}></TextField>
+                    onChange={handleOnChange} required error helperText={errLname}></TextField>
                 <br></br>
                 <TextField name="email" type="text" placeholder="Email Id" value={email}
-                    onChange={handleOnChange} required error helperText={errName}></TextField>
+                    onChange={handleOnChange} required error helperText={errEmail}></TextField>
                 <br></br>
                 <TextField name="phone" type="text" placeholder="Phone Number" value={phoneNo}
-                    onChange={handleOnChange} required error helperText={errName}></TextField>
+                    onChange={handleOnChange} required error helperText={errPhone}></TextField>
                 <br></br>
                 <Button color="primary" onClick={handleOnClick}> Register</Button>
                 <Link to="/Login"> Already Registered? Click here to login</Link>

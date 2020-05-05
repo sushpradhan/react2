@@ -10,7 +10,7 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import InfoIcon from '@material-ui/icons/Info';
 import HomeIcon from '@material-ui/icons/Home';
 import { Link as RouterLink } from 'react-router-dom';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+//import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 // Router Code
 import { withRouter } from "react-router";
 const useStyles = makeStyles((theme) => ({
@@ -26,10 +26,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Header = (props: any) => {
     const classes = useStyles();
-    const onLogout = () => {
-        localStorage.removeItem('token');
-        props.history.push('/Login');
-    }
+    // const onLogout = () => {
+    //     localStorage.removeItem('token');
+    //     props.history.push('/Login');
+    // }
     return (
         <div className={classes.root}>
             <AppBar position="static">
@@ -39,7 +39,7 @@ const Header = (props: any) => {
                     </IconButton>
                     <Typography variant="h6" className={classes.title} data-testid="news">News</Typography>
                     <HomeIcon /><Button color="inherit" data-testid="home" component={RouterLink} to="/"   >Home</Button>
-                    <Button color="inherit" data-testid="readNow" component={RouterLink} to="/ReadNow"   >ReadNow</Button>
+                    <Button id="readnow" color="inherit" data-testid="readNow" component={RouterLink} to="/ReadNow"   >ReadNow</Button>
                     <InfoIcon />
                     <Button color="inherit" data-testid="about" component={RouterLink} to="/About"   >About</Button>
                     <Button color="inherit" data-testid="register" component={RouterLink} to="/Register"   >Register</Button>
