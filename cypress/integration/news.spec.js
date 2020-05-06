@@ -19,21 +19,23 @@ describe(' UI E2E testing For News', () => {
         cy.url().should('include', "3000/");
     })
 
-
-    it("Check Register ", () => {
-
-        cy.get('.register').click();
-        cy.url().should('include', '/register');
+    it("to get all the news in home page", () => {
+        cy.get('input[name = uName]').type('admin');
+        cy.get('input[name = uPass]').type('password{enter}');
+        cy.get('#login').click();
+        cy.url().should('include', "3000/");
+        cy.get('#home').click();
+        cy.url().should('include', ':3000/'); 
     })
-
+   
 
     it("check read later news fetch", () => {
         cy.get('input[name = uName]').type('admin');
-        cy.get('input[name = uPass]').type('password');
-        cy.url().should('include', ':3000/Dashboard');
-
+        cy.get('input[name = uPass]').type('password{enter}');
+        cy.get('#login').click();
+        cy.url().should('include', "3000/");
         cy.get('#readnow').click();
+        cy.url().should('include', ':3000/ReadNow');   
     })
-
 
 })

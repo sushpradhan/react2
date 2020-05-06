@@ -38,11 +38,11 @@ const Header = (props: any) => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title} data-testid="news">News</Typography>
-                    <HomeIcon /><Button color="inherit" data-testid="home" component={RouterLink} to="/"   >Home</Button>
+                    <HomeIcon /><Button id="home" color="inherit" data-testid="home" component={RouterLink} to="/"   >Home</Button>
                     <Button id="readnow" color="inherit" data-testid="readNow" component={RouterLink} to="/ReadNow"   >ReadNow</Button>
                     <InfoIcon />
                     <Button color="inherit" data-testid="about" component={RouterLink} to="/About"   >About</Button>
-                    <Button color="inherit" data-testid="register" component={RouterLink} to="/Register"   >Register</Button>
+                    <Button id="btnregister" color="inherit" data-testid="register" component={RouterLink} to="/Register"   >Register</Button>
                     <VpnKeyIcon /><Button color="inherit" data-testid="login" component={RouterLink} to="/Login" >Login</Button>
                     {/* <ExitToAppIcon /><Button color="inherit" data-testid="logout" onClick={onLogout}>Logout</Button> */}
                 </Toolbar>
