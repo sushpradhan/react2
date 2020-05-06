@@ -12,7 +12,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import { Link as RouterLink } from 'react-router-dom';
 //import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 // Router Code
-import { withRouter } from "react-router";
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1
@@ -50,4 +50,4 @@ const Header = (props: any) => {
         </div>
     );
 }
-export default withRouter(Header);
+export default Header;

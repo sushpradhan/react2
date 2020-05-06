@@ -25,9 +25,9 @@ describe(' UI E2E testing For News', () => {
         cy.get('#login').click();
         cy.url().should('include', "3000/");
         cy.get('#home').click();
-        cy.url().should('include', ':3000/'); 
+        cy.url().should('include', ':3000/');
     })
-   
+
 
     it("check read later news fetch", () => {
         cy.get('input[name = uName]').type('admin');
@@ -35,7 +35,7 @@ describe(' UI E2E testing For News', () => {
         cy.get('#login').click();
         cy.url().should('include', "3000/");
         cy.get('#readnow').click();
-        cy.url().should('include', ':3000/ReadNow');   
+        cy.url().should('include', ':3000/ReadNow');
     })
 
 })
