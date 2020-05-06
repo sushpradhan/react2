@@ -4,7 +4,7 @@ import User from "../../model/user";
 
 import { FormControl, TextField, Button } from '@material-ui/core'
 
-
+import { BrowserRouter as Router} from 'react-router-dom';
 import RegisterService from '../../services/reg.service'
 
 import {Link} from 'react-router-dom'
@@ -85,6 +85,7 @@ const Register = (props: any) => {
         <div>
             <h2>Register</h2>
             <FormControl>
+            <Router>
                 <TextField name="uName" type="text" placeholder="User Name" value={userName}
                     onChange={handleOnChange} required error helperText={errName}></TextField>
                 <br></br>
@@ -105,8 +106,9 @@ const Register = (props: any) => {
                 <br></br>
                 <Button color="primary" onClick={handleOnClick}> Register</Button>
                 <Link to="/Login"> Already Registered? Click here to login</Link>
+                </Router>
             </FormControl>
-
+        
         </div>
     )
 
