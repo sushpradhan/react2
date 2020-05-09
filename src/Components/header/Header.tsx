@@ -10,7 +10,7 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import InfoIcon from '@material-ui/icons/Info';
 import HomeIcon from '@material-ui/icons/Home';
 import { Link as RouterLink } from 'react-router-dom';
-import { BrowserRouter as Router} from 'react-router-dom';
+
 //import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 // Router Code
 
@@ -35,7 +35,7 @@ const Header = (props: any) => {
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                    <Router>
+                    
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" data-testid="menu">
                         <MenuIcon />
                     </IconButton>
@@ -47,7 +47,7 @@ const Header = (props: any) => {
                     <Button id="btnregister" color="inherit" data-testid="register" component={RouterLink} to="/Register"   >Register</Button>
                     <VpnKeyIcon /><Button color="inherit" data-testid="login" component={RouterLink} to="/Login" >Login</Button>
                     {/* <ExitToAppIcon /><Button color="inherit" data-testid="logout" onClick={onLogout}>Logout</Button> */}
-                    </Router>
+                   
                 </Toolbar>
             </AppBar>
         </div>

@@ -7,7 +7,7 @@ import { FormControl, TextField, Button} from '@material-ui/core'
 import {Link} from 'react-router-dom'
 
 import LoginService from '../../services/auth.service'
-import { BrowserRouter as Router} from 'react-router-dom';
+
 
 const Login = (props: any) => {
 
@@ -70,7 +70,7 @@ const Login = (props: any) => {
         <div >
             <h2>Login</h2>
             <FormControl>
-                <Router>
+                
                 <TextField name="uName" type="text" placeholder="User Name" value={userName}
                     onChange={handleOnChange} required error helperText={errName}></TextField>
                 <br></br>
@@ -79,7 +79,7 @@ const Login = (props: any) => {
                 <br></br>
                 <Button id="login" color="primary" onClick={handleOnClick}> Login</Button>
                 <Link to="/Register"> Not Registered? Click here</Link>
-                </Router>
+               
             </FormControl>
 
         </div>
